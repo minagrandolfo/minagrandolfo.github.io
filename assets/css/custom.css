@@ -1,0 +1,463 @@
+/*
+	Custom overrides for Mina Grandolfo's site.
+	Overlays on top of main.css (Hyperspace).
+	Palette: B&W with mauve (#6F54CA) → pink (#E35BA5) gradient accent.
+*/
+
+/* ---------- Palette variables (for reference) ---------- */
+/*
+	--ink:          #1a1a1a  (body text & headings)
+	--ink-soft:     #444     (secondary text)
+	--ink-faint:    #8a8a8a  (tertiary, timestamps)
+	--paper:        #ffffff  (page background)
+	--paper-alt:    #fafafa  (section stripe)
+	--rule:         rgba(0,0,0,0.12)
+	--rule-soft:    rgba(0,0,0,0.06)
+	--mauve:        #6F54CA  (primary accent, links, buttons)
+	--mauve-alt:    #5A3FB4
+	--pink:         #E35BA5  (gradient terminus)
+*/
+
+/* ---------- Typography & body ---------- */
+
+body {
+	background: #ffffff !important;
+	color: rgba(0, 0, 0, 0.78) !important;
+	font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+body, input, select, textarea {
+	color: rgba(0, 0, 0, 0.78) !important;
+	font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #1a1a1a !important;
+	font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	font-weight: 600 !important;
+	letter-spacing: 0 !important;
+}
+
+h1 { font-size: 2.4em !important; line-height: 1.2 !important; }
+h2 { font-size: 1.7em !important; line-height: 1.25 !important; }
+h3 { font-size: 1.15em !important; line-height: 1.35 !important; margin-top: 1.5em !important; }
+
+a {
+	color: #6F54CA !important;
+	text-decoration: none !important;
+	border-bottom: dotted 1px rgba(111, 84, 202, 0.4) !important;
+	transition: color 0.2s, border-color 0.2s !important;
+}
+
+a:hover {
+	color: #E35BA5 !important;
+	border-bottom-color: rgba(227, 91, 165, 0.6) !important;
+}
+
+strong, b { color: #1a1a1a !important; }
+
+/* ---------- Section backgrounds (alternating stripes) ---------- */
+
+#wrapper > section.wrapper {
+	background: #ffffff !important;
+	color: rgba(0, 0, 0, 0.78) !important;
+}
+
+#wrapper > section.wrapper.style2,
+#wrapper > section.wrapper.style3 {
+	background: #fafafa !important;
+}
+
+#wrapper > section.wrapper .inner {
+	color: rgba(0, 0, 0, 0.78) !important;
+}
+
+/* Section divider: mauve→pink gradient line between sections */
+#wrapper > section.wrapper + section.wrapper {
+	border-top: 1px solid transparent !important;
+	position: relative;
+}
+
+#wrapper > section.wrapper + section.wrapper::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	max-width: 600px;
+	height: 2px;
+	background: linear-gradient(to right, #6F54CA, #E35BA5);
+}
+
+/* ---------- Sidebar ---------- */
+
+#sidebar {
+	background: #1a1a1a !important;
+}
+
+#sidebar .inner nav ul li a {
+	color: rgba(255, 255, 255, 0.65) !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+	letter-spacing: 0.15em !important;
+}
+
+#sidebar .inner nav ul li a:hover,
+#sidebar .inner nav ul li a.active {
+	color: #ffffff !important;
+}
+
+#sidebar .inner nav ul li a.active::before {
+	background-image: linear-gradient(to right, #6F54CA, #E35BA5) !important;
+}
+
+/* Mobile nav toggle when sidebar collapses */
+@media screen and (max-width: 1280px) {
+	#sidebar {
+		background: #1a1a1a !important;
+	}
+}
+
+/* ---------- Hero / intro ---------- */
+
+#intro .inner {
+	text-align: center;
+}
+
+.hero-photo {
+	display: block;
+	margin: 0 auto 1.8em auto;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 3px solid transparent;
+	background:
+		linear-gradient(#fff, #fff) padding-box,
+		linear-gradient(135deg, #6F54CA, #E35BA5) border-box;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.also-known {
+	color: rgba(0, 0, 0, 0.45) !important;
+	font-size: 0.85em !important;
+	font-style: italic !important;
+	letter-spacing: 0.05em !important;
+	margin-top: -0.3em !important;
+	margin-bottom: 1.2em !important;
+}
+
+.affiliation {
+	color: rgba(0, 0, 0, 0.6) !important;
+	font-size: 0.95em !important;
+	margin-bottom: 1.2em !important;
+}
+
+.tagline {
+	font-style: italic !important;
+	font-size: 1.15em !important;
+	color: #6F54CA !important;
+	margin: 1.2em auto !important;
+	max-width: 42em;
+}
+
+/* ---------- Buttons ---------- */
+
+input[type="submit"], input[type="reset"], input[type="button"],
+button, .button {
+	background: transparent !important;
+	border: 2px solid #6F54CA !important;
+	color: #6F54CA !important;
+	font-weight: 500 !important;
+	border-radius: 4px !important;
+	transition: all 0.2s !important;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover,
+button:hover, .button:hover {
+	background: #6F54CA !important;
+	color: #ffffff !important;
+}
+
+.button.primary {
+	background: #6F54CA !important;
+	color: #ffffff !important;
+}
+
+.button.primary:hover {
+	background: #E35BA5 !important;
+	border-color: #E35BA5 !important;
+}
+
+/* ---------- Lists: publications and conferences ---------- */
+
+ul.pub-list, ul.conf-list {
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0.5em 0 2em 0 !important;
+}
+
+ul.pub-list li, ul.conf-list li {
+	padding: 1em 0 1em 1.2em !important;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+	position: relative;
+	line-height: 1.55 !important;
+}
+
+ul.pub-list li::before, ul.conf-list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 1.45em;
+	width: 6px;
+	height: 6px;
+	background: linear-gradient(135deg, #6F54CA, #E35BA5);
+	border-radius: 50%;
+}
+
+ul.pub-list li:last-child, ul.conf-list li:last-child {
+	border-bottom: none !important;
+}
+
+ul.pub-list .venue {
+	font-style: italic;
+	color: rgba(0, 0, 0, 0.55);
+}
+
+ul.pub-list .pdf-link {
+	font-size: 0.9em;
+	color: #6F54CA !important;
+	border-bottom: none !important;
+	margin-left: 0.5em;
+}
+
+ul.pub-list .teaser {
+	display: block;
+	font-size: 0.9em;
+	color: rgba(0, 0, 0, 0.55);
+	margin-top: 0.3em;
+	font-style: italic;
+}
+
+.section-intro {
+	color: rgba(0, 0, 0, 0.55);
+	font-size: 0.95em;
+	font-style: italic;
+	margin-bottom: 0.8em !important;
+}
+
+ul.conf-list .conf-type {
+	display: inline-block;
+	font-size: 0.75em;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: #6F54CA;
+	background: rgba(111, 84, 202, 0.08);
+	padding: 0.15em 0.6em;
+	border-radius: 3px;
+	margin-left: 0.6em;
+	vertical-align: 2px;
+}
+
+ul.conf-list li em {
+	color: rgba(0, 0, 0, 0.65);
+	font-size: 0.95em;
+}
+
+/* ---------- Features grid (research axes, tools) ---------- */
+
+.features {
+	border: none !important;
+}
+
+.features section {
+	border: 1px solid rgba(0, 0, 0, 0.08) !important;
+	background: #ffffff !important;
+	border-radius: 6px !important;
+	padding: 2em 1.8em !important;
+	transition: box-shadow 0.2s, transform 0.2s !important;
+}
+
+.features section:hover {
+	box-shadow: 0 6px 24px rgba(111, 84, 202, 0.12) !important;
+	transform: translateY(-2px);
+}
+
+.features section .icon.major {
+	background: linear-gradient(135deg, #6F54CA, #E35BA5) !important;
+	-webkit-background-clip: text !important;
+	background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	color: #6F54CA !important;
+	border: none !important;
+}
+
+.features section .icon.major::before {
+	background: none !important;
+}
+
+.features section h3 {
+	color: #1a1a1a !important;
+	margin-top: 0.5em !important;
+}
+
+.features section p {
+	color: rgba(0, 0, 0, 0.7) !important;
+	font-size: 0.95em !important;
+}
+
+.features .card-list {
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.features .card-list li {
+	position: relative;
+	padding: 0.6em 0 0.6em 1.2em !important;
+	font-size: 0.95em !important;
+	color: rgba(0, 0, 0, 0.7) !important;
+	line-height: 1.5 !important;
+	border-bottom: 1px dotted rgba(0, 0, 0, 0.08);
+}
+
+.features .card-list li:last-child {
+	border-bottom: none;
+}
+
+.features .card-list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 1em;
+	width: 5px;
+	height: 5px;
+	background: linear-gradient(135deg, #6F54CA, #E35BA5);
+	border-radius: 50%;
+}
+
+.features .card-list strong {
+	color: #1a1a1a !important;
+}
+
+.features .card-list .card-link {
+	font-size: 0.85em;
+	color: #6F54CA !important;
+	border-bottom: none !important;
+	margin-left: 0.3em;
+	white-space: nowrap;
+}
+
+.features .card-list .card-link::before {
+	content: "▸ ";
+}
+
+/* ---------- Contact ---------- */
+
+ul.contact {
+	list-style: none !important;
+	padding: 0 !important;
+}
+
+ul.contact li {
+	padding: 1.2em 0 !important;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+	border-left: none !important;
+}
+
+ul.contact li:last-child {
+	border-bottom: none !important;
+}
+
+ul.contact h3 {
+	color: rgba(0, 0, 0, 0.5) !important;
+	font-size: 0.75em !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.18em !important;
+	margin-bottom: 0.4em !important;
+}
+
+ul.icons li a.icon {
+	background: rgba(111, 84, 202, 0.1) !important;
+	color: #6F54CA !important;
+	border-color: transparent !important;
+	transition: all 0.2s !important;
+}
+
+ul.icons li a.icon:hover {
+	background: linear-gradient(135deg, #6F54CA, #E35BA5) !important;
+	color: #ffffff !important;
+}
+
+/* ---------- Footer ---------- */
+
+#footer {
+	background: #1a1a1a !important;
+	color: rgba(255, 255, 255, 0.5) !important;
+	padding: 2em 0 !important;
+}
+
+#footer .menu li,
+#footer .menu li a {
+	color: rgba(255, 255, 255, 0.5) !important;
+	border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+#footer .menu li a {
+	border-bottom: dotted 1px rgba(255, 255, 255, 0.35) !important;
+}
+
+#footer .menu li a:hover {
+	color: #E35BA5 !important;
+}
+
+/* ---------- Misc ---------- */
+
+/* Remove the border-left from blockquotes if present */
+blockquote {
+	border-left: 4px solid #6F54CA !important;
+	padding-left: 1.5em !important;
+	color: rgba(0, 0, 0, 0.65) !important;
+	font-style: italic;
+}
+
+/* Horizontal rules */
+hr {
+	border: none !important;
+	height: 2px !important;
+	background: linear-gradient(to right, transparent, rgba(111, 84, 202, 0.4), rgba(227, 91, 165, 0.4), transparent) !important;
+}
+
+/* Bandeau in sidebar on mobile: ensure gradient separator */
+#sidebar .inner nav > ul > li::after {
+	background-image: linear-gradient(to right, #6F54CA, #E35BA5) !important;
+}
+
+/* Links inside h3 */
+h3 a {
+	border-bottom: none !important;
+}
+
+/* Section titles get a small accent bar above */
+#publications h2,
+#conferences h2,
+#methods h2,
+#contact h2,
+#research h2 {
+	position: relative;
+	padding-bottom: 0.4em;
+}
+
+#publications h2::after,
+#conferences h2::after,
+#methods h2::after,
+#contact h2::after,
+#research h2::after {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 3px;
+	background: linear-gradient(to right, #6F54CA, #E35BA5);
+	margin-top: 0.5em;
+	border-radius: 2px;
+}

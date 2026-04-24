@@ -24,6 +24,14 @@ body {
 	background: #ffffff !important;
 	color: rgba(0, 0, 0, 0.78) !important;
 	font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body, input, select, textarea {

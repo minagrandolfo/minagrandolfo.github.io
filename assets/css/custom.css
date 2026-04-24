@@ -239,6 +239,19 @@ ul.pub-list .teaser {
 	font-style: italic;
 }
 
+ul.pub-list .fr-original {
+	display: block;
+	font-size: 0.82em;
+	color: rgba(0, 0, 0, 0.42);
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+	border-top: 1px dotted rgba(0, 0, 0, 0.08);
+}
+
+ul.pub-list .fr-original em {
+	color: rgba(0, 0, 0, 0.55);
+}
+
 .section-intro {
 	color: rgba(0, 0, 0, 0.55);
 	font-size: 0.95em;

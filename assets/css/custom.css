@@ -252,6 +252,15 @@ ul.pub-list .fr-original em {
 	color: rgba(0, 0, 0, 0.55);
 }
 
+ul.pub-list .english-note {
+	display: block;
+	font-size: 0.82em;
+	color: #6F54CA;
+	margin-top: 0.4em;
+	margin-bottom: 0.2em;
+	font-style: italic;
+}
+
 .section-intro {
 	color: rgba(0, 0, 0, 0.55);
 	font-size: 0.95em;

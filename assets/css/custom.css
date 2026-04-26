@@ -330,7 +330,10 @@ ul.conf-list li em {
 	#intro ul.actions .button {
 		width: 100%;
 		text-align: center;
-		white-space: normal;
+		letter-spacing: 0.1em !important;
+		font-size: 0.78em !important;
+		padding-left: 0.6em !important;
+		padding-right: 0.6em !important;
 	}
 }
 

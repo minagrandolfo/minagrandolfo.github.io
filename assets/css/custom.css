@@ -304,8 +304,13 @@ ul.conf-list li em {
 	border: 1px solid rgba(0, 0, 0, 0.08) !important;
 	background: #ffffff !important;
 	border-radius: 6px !important;
-	padding: 2em 1.8em !important;
 	transition: box-shadow 0.2s, transform 0.2s !important;
+}
+
+@media screen and (max-width: 480px) {
+	.features section {
+		padding: 2em 1.5em 1em 1.5em !important;
+	}
 }
 
 .features section:hover {
@@ -334,34 +339,6 @@ ul.conf-list li em {
 .features section p {
 	color: rgba(0, 0, 0, 0.7) !important;
 	font-size: 0.95em !important;
-}
-
-/* Desktop: icon next to title (inline). Mobile: icon above title (default). */
-@media screen and (min-width: 736px) {
-	.features section {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		column-gap: 1em;
-		align-items: start;
-	}
-	.features section .icon.major {
-		grid-row: 1;
-		grid-column: 1;
-		align-self: center;
-		margin: 0 !important;
-	}
-	.features section h3 {
-		grid-row: 1;
-		grid-column: 2;
-		margin-top: 0 !important;
-		align-self: center;
-	}
-	.features section > p,
-	.features section > ul {
-		grid-row: 2;
-		grid-column: 1 / -1;
-		margin-top: 1em;
-	}
 }
 
 .features .card-list {

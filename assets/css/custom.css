@@ -130,44 +130,63 @@ strong, b { color: #1a1a1a !important; }
 @media screen and (max-width: 736px) {
 	#sidebar {
 		display: block !important;
-		height: 3.5em !important;
-		line-height: 3.5em !important;
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3.2em !important;
 		padding: 0 !important;
 		overflow-x: auto !important;
 		overflow-y: hidden !important;
 		-webkit-overflow-scrolling: touch;
-		white-space: nowrap;
+		z-index: 100;
 	}
 	#sidebar > .inner {
 		display: flex;
-		flex-direction: row;
-		align-items: stretch;
+		align-items: center;
+		justify-content: flex-start !important;
 		height: 100%;
-		padding: 0 1em;
+		min-width: max-content;
+		margin: 0 !important;
+		padding: 0 1em !important;
+		text-align: left !important;
+	}
+	#sidebar nav {
+		height: 100%;
 	}
 	#sidebar nav ul {
-		display: flex;
-		margin: 0;
-		padding: 0;
+		display: flex !important;
+		flex-direction: row !important;
+		align-items: center;
+		height: 100%;
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none;
 	}
 	#sidebar nav ul li {
-		display: block;
-		margin: 0 0 0 1.2em;
-		padding: 0;
-	}
-	#sidebar nav ul li:first-child {
-		margin-left: 0;
+		display: block !important;
+		flex: 0 0 auto;
+		margin: 0 !important;
+		padding: 0 0.8em !important;
+		height: 100%;
 	}
 	#sidebar nav a {
-		height: 3.5em;
-		line-height: 3.5em;
+		display: flex !important;
+		align-items: center;
+		height: 100%;
 		padding: 0 !important;
-		font-size: 0.55em !important;
+		font-size: 0.6em !important;
+		letter-spacing: 0.15em !important;
 		border-bottom: none !important;
+		white-space: nowrap;
 	}
-	/* Push wrapper down to make room for top bar */
+	#sidebar nav a::before,
+	#sidebar nav a::after {
+		display: none !important;
+	}
+	/* Push wrapper down to make room for fixed top bar */
 	#wrapper {
-		padding-top: 3.5em !important;
+		padding-top: 3.2em !important;
 	}
 }
 

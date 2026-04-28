@@ -126,6 +126,51 @@ strong, b { color: #1a1a1a !important; }
 	}
 }
 
+/* Mobile (<736px): keep sidebar visible as top bar with horizontal scroll */
+@media screen and (max-width: 736px) {
+	#sidebar {
+		display: block !important;
+		height: 3.5em !important;
+		line-height: 3.5em !important;
+		padding: 0 !important;
+		overflow-x: auto !important;
+		overflow-y: hidden !important;
+		-webkit-overflow-scrolling: touch;
+		white-space: nowrap;
+	}
+	#sidebar > .inner {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		height: 100%;
+		padding: 0 1em;
+	}
+	#sidebar nav ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+	}
+	#sidebar nav ul li {
+		display: block;
+		margin: 0 0 0 1.2em;
+		padding: 0;
+	}
+	#sidebar nav ul li:first-child {
+		margin-left: 0;
+	}
+	#sidebar nav a {
+		height: 3.5em;
+		line-height: 3.5em;
+		padding: 0 !important;
+		font-size: 0.55em !important;
+		border-bottom: none !important;
+	}
+	/* Push wrapper down to make room for top bar */
+	#wrapper {
+		padding-top: 3.5em !important;
+	}
+}
+
 /* ---------- Hero / intro ---------- */
 
 #intro .inner {
